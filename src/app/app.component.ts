@@ -8,10 +8,17 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  widthImg = 10;
   name = 'Nicolas';
   age = 18;
   img = 'https://images.unsplash.com/photo-1664894364785-90a4f1eab09b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2NjA3MDk2Mw&ixlib=rb-1.2.1&q=80&w=1080';
   btnDisabled = true;
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
+
   person = {
     name: 'Nicolas',
     age: 18,
@@ -20,6 +27,11 @@ export class AppComponent {
 
   names: string[] = ['Nico', 'Juli', 'Santi']
   newName = '';
+  box = {
+    width: 100,
+    height: 100,
+    background : 'red'
+  }
   products: Product[] = [
     {
       name: 'EL mejor juguete',
@@ -77,4 +89,10 @@ export class AppComponent {
   deleteName(index: number){
     this.names.splice(index, 1);
   }
+
+  onRegister(){
+    console.log(this.register)
+  }
+
 }
+
